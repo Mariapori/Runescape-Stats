@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JToolBar;
 import javax.swing.ListModel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.DefaultListModel;
 import javax.swing.JCheckBox;
 import javax.swing.JList;
@@ -151,10 +152,11 @@ public class MainForm {
 				model.addElement(joo.skills.name() + ": " + joo.lvl);
 			}
 			JList statslista = new JList(model);
-			statslista.setAutoscrolls(true);
-			panel.add(statslista);
+			JScrollPane scrollPane = new JScrollPane();
+		    scrollPane.setViewportView(statslista);
+
+			panel.add(scrollPane);
 		}
-		frmRunescapeStatsBy.pack();
 	}
 	
 	private void readSettings() {
